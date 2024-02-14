@@ -1,0 +1,179 @@
+{% extends 'sims/base.html' %}
+{% load static %}
+{% block content %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Responsive Admin &amp; Dashboard Template based on Bootstrap 5">
+    <meta name="author" content="AdminKit">
+    <meta name="keywords" content="adminkit, bootstrap, bootstrap 5, admin, dashboard, template, responsive, css, sass, html, theme, front-end, ui kit, web">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="shortcut icon" href="images/icon-48x48.png">
+
+    <link rel="canonical" href="https://demo.adminkit.io/tables-datatables-fixed-header.html">
+
+    <title></title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&amp;display=swap" rel="stylesheet">
+
+    <!-- Choose your prefered color scheme -->
+    <!-- <link href="css/light.css" rel="stylesheet"> -->
+    <!-- <link href="css/dark.css" rel="stylesheet"> -->
+
+    <!-- BEGIN SETTINGS -->
+    <!-- Remove this after purchasing -->
+    <link href="{% static 'sims/css/light.css' %}" rel="stylesheet">
+    <link class="js-stylesheet" href="{% static 'sims/css/light.css' %}" rel="stylesheet">
+    <!-- END SETTINGS -->
+    <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-120946860-10"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-120946860-10', {
+            'anonymize_ip': true
+        });
+    </script>
+</head>
+<!--
+  HOW TO USE: 
+  data-theme: default (default), dark, light, colored
+  data-layout: fluid (default), boxed
+  data-sidebar-position: left (default), right
+  data-sidebar-layout: default (default), compact
+-->
+
+<body data-theme="default" data-layout="fluid" data-sidebar-position="left" data-sidebar-layout="default">
+    <div class="wrapper">
+
+        <div class="main">
+
+
+            <main class="content">
+                <div class="container-fluid p-0">
+
+                    <div class="mb-3">
+                        <h1 class="h3 d-inline align-middle">Worntech University</h1><a class="badge bg-primary ms-2" href="#" target="_blank">Information of {{studentinfoview.First_Name}} {{studentinfoview.Middle_Name}} {{studentinfoview.Last_Name}}</i></a>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="alert alert-warning alert-dismissible" role="alert">
+                                <div class="alert-message">
+                                    <h4 class="alert-heading">Welcome</h4>
+                                    <p>
+                                        The active accademicy year 2023/2024, List of all students, all courses and all department.
+                                    </p>
+                                    <pre class="h6 text-danger mb-0"><script src="{% static 'web/js/datatables.js' %}"></script></pre>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div class="card-header">
+                                    <h5 class="card-title">Information</h5>
+                                </div>
+                                <div class="card-body table-responsive">
+                                    <table id="datatables-fixed-header" class="table table-striped" style="width:100%">
+                                        <thead>
+                                            <tr>
+                                              <th scope="">Full Name:</th>
+                                              <th scope="">{{studentinfoview.First_Name}} {{studentinfoview.Middle_Name}} {{studentinfoview.Last_Name}}</th>
+                                            </tr>
+                                            <tr>
+                                              <th scope="">Id No:</th>
+                                              <th scope="">{{studentinfoview.user}}</th>
+                                            </tr>
+                                            <tr>
+                                              <th scope="">Region:</th>
+                                              <th scope="">{{studentinfoview.Region}}</th>
+                                            </tr>
+                                            <tr>
+                                              <th scope="">Phone:</th>
+                                              <th scope="">{{studentinfoview.Phone}}</th>
+                                            </tr>
+                                            <tr>
+                                              <th scope="">Date Registered:</th>
+                                              <th scope="">{{studentinfoview.date_joined}}</th>
+                                            </tr>
+                                            <tr>
+                                              <th scope="">Collage:</th>
+                                              <th scope="">{{studentinfoview.Collage}}</th>
+                                            </tr>
+                                            <tr>
+                                              <th scope="">Department:</th>
+                                              <th scope="">{{studentinfoview.Department}}</th>
+                                            </tr>
+                                            <tr>
+                                              <th scope="">Level:</th>
+                                              <th scope="">{{studentinfoview.Level}}</th>
+                                            </tr>
+                                            <tr>
+                                              <th scope="">Course:</th>
+                                              <th scope="">{{studentinfoview.course}}</th>
+                                            </tr>
+                                            <tr>
+                                              <th scope="">Years:</th>
+                                              <th scope="">{{studentinfoview.years}}</th>
+                                            </tr>
+                                          </thead>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <script src="js/app.js"></script>
+
+    <script src="{% static 'web/js/datatables.js' %}"></script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // Datatables Fixed Header
+            $("#datatables-fixed-header").DataTable({
+                fixedHeader: true,
+                pageLength: 25
+            });
+        });
+    </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function(event) {
+            setTimeout(function() {
+                if (localStorage.getItem('popState') !== 'shown') {
+                    window.notyf.open({
+                        type: "success",
+                        message: "Get access to all 500+ components and 45+ pages with AdminKit PRO. <u><a class=\"text-white\" href=\"https://adminkit.io/pricing\" target=\"_blank\">More info</a></u> 🚀",
+                        duration: 10000,
+                        ripple: true,
+                        dismissible: false,
+                        position: {
+                            x: "left",
+                            y: "bottom"
+                        }
+                    });
+
+                    localStorage.setItem('popState', 'shown');
+                }
+            }, 15000);
+        });
+    </script>
+
+</body>
+
+</html>
+
+{% endblock %}

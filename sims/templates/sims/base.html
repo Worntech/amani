@@ -1,0 +1,638 @@
+
+{% load static %}
+
+<!DOCTYPE html><html lang="en"><head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="description" content="Responsive Admin &amp; Dashboard Template based on Bootstrap 5">
+	<meta name="author" content="AdminKit">
+	<meta name="keywords" content="adminkit, bootstrap, bootstrap 5, admin, dashboard, template, responsive, css, sass, html, theme, front-end, ui kit, web">
+
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link rel="shortcut icon" href="{% static 'sims/images/icon-48x48.png' %}">
+
+	<link rel="canonical" href="https://demo.adminkit.io/dashboard-ecommerce.html">
+
+	<title>Worntech University information system</title>
+
+	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&amp;display=swap" rel="stylesheet">
+
+	<!-- Choose your prefered color scheme -->
+	<!-- <link href="css/light.css" rel="stylesheet"> -->
+	<!-- <link href="css/dark.css" rel="stylesheet"> -->
+
+	<!-- BEGIN SETTINGS -->
+	<!-- Remove this after purchasing -->
+	<link href="{% static 'sims/css/light.css' %}" rel="stylesheet">
+	<link href="{% static 'sims/css/main.css' %}" rel="stylesheet">
+    <link class="js-stylesheet" href="{% static 'sims/css/light.css' %}" rel="stylesheet">
+	<script src="{% static 'sims/js/settings.js' %}"></script>
+	<style>
+		body {
+			opacity: 0;
+		}
+			
+		.columnimage {
+            float: left;
+            width: 12%;
+            padding: 5px;
+			height: 80px;
+        }
+		.text1 {
+            float: right;
+            width: 80%;
+            padding: 5px;
+			height: 80px;
+        }
+        /* Clearfix (clear floats) */
+        
+		.rowimage {
+            width: 100%;
+        }
+        .rowimage::after {
+            content: "";
+            clear: both;
+            display: table;
+        }
+		img{
+			height: 80px;
+			width: 30%;
+		}
+	</style>
+	<!-- END SETTINGS -->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-120946860-10"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-120946860-10', { 'anonymize_ip': true });
+</script>
+
+</head>
+<!--
+  HOW TO USE: 
+  data-theme: default (default), dark, light, colored
+  data-layout: fluid (default), boxed
+  data-sidebar-position: left (default), right
+  data-sidebar-layout: default (default), compact
+-->
+
+<body data-theme="default" data-layout="fluid" data-sidebar-position="left" data-sidebar-layout="default">
+	  <div class="rowimage">
+        <div class="columnimage">
+            <img src="{% static 'sims/images/favicon.png' %}" alt="Snow" style="width:100%">
+        </div>
+        <div class="text1">
+            <h3>AMANI INTERNATIONAL OPTICAL CENTRE</h3>
+			The power of healing
+        </div>
+    </div>
+	<div class="wrapper">
+		<nav id="sidebar" class="sidebar js-sidebar">
+			<div class="sidebar-content js-simplebar">
+				<a class="sidebar-brand" href="{% url 'dashboard' %}">
+					<span class="sidebar-brand-text align-middle">
+						AMANI
+						<sup><small class="badge bg-primary text-uppercase">HOSPITAL</small></sup>
+					</span>
+					<svg class="sidebar-brand-icon align-middle" width="32px" height="32px" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="square" stroke-linejoin="miter" color="#FFFFFF" style="margin-left: -3px">
+						<path d="M12 4L20 8.00004L12 12L4 8.00004L12 4Z"></path>
+						<path d="M20 12L12 16L4 12"></path>
+						<path d="M20 16L12 20L4 16"></path>
+					</svg>
+				</a>
+
+				{% if user.is_authenticated %}
+				{% comment %} {% if user.first_name == "Staff" %} {% endcomment %}
+				<div class="sidebar-user">
+					<div class="d-flex justify-content-center">
+						<div class="flex-shrink-0">
+							<img src="{% static 'sims/images/avatar.jpg' %}" class="avatar img-fluid rounded me-1" alt="Charles Hall">
+						</div>
+						<div class="flex-grow-1 ps-2">
+							{% comment %} {% if profilename %}
+							{% for i in profilename %} {% endcomment %}
+							<a class="sidebar-user-title dropdown-toggle" href="#" data-bs-toggle="dropdown">
+								{% comment %} {{first_name}} {{last_name}} {% endcomment %}
+								{{user.username}}
+							</a>
+							{% comment %} {% endfor %}
+							{% endif %} {% endcomment %}
+							<div class="dropdown-menu dropdown-menu-start">
+								<a class="dropdown-item" href="{% url 'myprofile' %}"><i class="align-middle me-1" data-feather="user"></i>My Profile</a>
+								<a class="dropdown-item" href="{% url 'change_password' %}"><i class="align-middle me-1" data-feather="pie-chart"></i> Change Password</a>
+								<div class="dropdown-divider"></div>
+								<a class="dropdown-item" href="#"><i class="align-middle me-1" data-feather="settings"></i> Settings &amp;
+									Privacy</a>
+								<a class="dropdown-item" href="#"><i class="align-middle me-1" data-feather="help-circle"></i> Help Center</a>
+								<div class="dropdown-divider"></div>
+								<a class="dropdown-item" href="{% url 'logout' %}">Log out</a>
+							</div>
+
+							<div class="sidebar-user-subtitle">Staff</div>
+						</div>
+					</div>
+				</div>
+
+				<ul class="sidebar-nav">
+					<li class="sidebar-header">
+						Welcome
+					</li>
+					<li class="sidebar-item">
+						<a data-bs-target="#dashboards" data-bs-toggle="collapse" class="sidebar-link collapsed">
+							<i class="align-middle" data-feather="sliders"></i> <span class="align-middle">Dashboards</span>
+						</a>
+						<ul id="dashboards" class="sidebar-dropdown list-unstyled collapse " data-bs-parent="#sidebar">
+							{% comment %} <li class="sidebar-item"><a class="sidebar-link" href="{% url 'news' %}">News</a></li> {% endcomment %}
+							<li class="sidebar-item active"><a class="sidebar-link" href="{% url 'dashboard' %}">Dashboard <span class="sidebar-badge badge bg-primary">Welcome</span></a></li>
+						</ul>
+					</li>
+
+                    <li class="sidebar-item">
+						<a data-bs-target="#student" data-bs-toggle="collapse" class="sidebar-link collapsed">
+							<i class="align-middle" data-feather="users"></i> <span class="align-middle">Patients</span>
+						</a>
+						<ul id="student" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
+                            <li class="sidebar-item">
+								<a data-bs-target="" >
+                                    <a class="sidebar-link" href="{% url 'addPatient' %}">Add Patient</a>
+                                </a>
+							</li>
+							<li class="sidebar-item">
+								<a data-bs-target="" >
+                                    <a class="sidebar-link" href="{% url 'patient' %}">All Patient</a>
+                                </a>
+							</li>
+						</ul>
+					</li>
+
+                    <li class="sidebar-item">
+						<a data-bs-target="#staff" data-bs-toggle="collapse" class="sidebar-link collapsed">
+							<i class="align-middle" data-feather="users"></i> <span class="align-middle">Staff</span>
+						</a>
+						<ul id="staff" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
+                            <li class="sidebar-item">
+								<a data-bs-target="">
+                                    <a class="sidebar-link" href="{% url 'addstaff' %}">Add Staff</a>
+                                </a>
+							</li>
+							<li class="sidebar-item">
+								<a data-bs-target="">
+                                    <a class="sidebar-link" href="{% url 'addstaffcontactinfo' %}">Add Staff Information</a>
+                                </a>
+							</li>
+							<li class="sidebar-item">
+								<a data-bs-target="">
+                                    <a class="sidebar-link" href="{% url 'staff' %}">All Staff</a>
+                                </a>
+							</li>
+						</ul>
+					</li>
+                    
+
+
+
+
+
+
+
+					<li class="sidebar-item">
+						<a class="sidebar-link" href="{% url 'myprofile' %}">
+							<i class="align-middle" data-feather="user"></i> <span class="align-middle">My Profile</span>
+						</a>
+					</li>
+
+					<li class="sidebar-item">
+						<a href="#auth" data-bs-toggle="collapse" class="sidebar-link collapsed">
+							<i class="align-middle" data-feather="users"></i> <span class="align-middle">Auth</span>
+						</a>
+						<ul id="auth" class="sidebar-dropdown list-unstyled collapse " data-bs-parent="#sidebar">
+							<li class="sidebar-item"><a class="sidebar-link" href="{% url 'logout' %}">Logout</a></li>
+							<li class="sidebar-item"><a class="sidebar-link" href="{% url 'change_password' %}">Reset Password <span class="sidebar-badge badge bg-primary"></span></a></li>
+						</ul>
+					</li>
+
+					<li class="sidebar-item">
+						<a class="sidebar-link" href="">
+							<i class="align-middle" data-feather="bell"></i> <span class="align-middle">Notifications</span>
+							<span class="sidebar-badge badge bg-primary">30+</span>
+						</a>
+					</li>
+
+				<div class="sidebar-cta">
+					<div class="sidebar-cta-content">
+						<strong class="d-inline-block mb-2">Designed and developed by Worntech || Technology Centre</strong>
+						<div class="mb-3 text-sm">
+							Welcome.
+						</div>
+
+						<div class="d-grid">
+							<a href="https://www.worntech.com" class="btn btn-outline-primary" target="_blank">Developer Website</a>
+						</div>
+					</div>
+				</div>
+
+		{% comment %} {% elif user.first_name == "Student" %}
+				<div class="sidebar-user">
+					<div class="d-flex justify-content-center">
+						<div class="flex-shrink-0">
+							<img src="{% static 'sims/images/avatar.jpg' %}" class="avatar img-fluid rounded me-1" alt="Charles Hall">
+						</div>
+						<div class="flex-grow-1 ps-2">
+							<a class="sidebar-user-title dropdown-toggle" href="#" data-bs-toggle="dropdown">
+								{{user.username}}
+							</a>
+							<div class="dropdown-menu dropdown-menu-start">
+								<a class="dropdown-item" href="{% url 'profile' %}"><i class="align-middle me-1" data-feather="user"></i> Profile</a>
+								<a class="dropdown-item" href="{% url 'change_password' %}"><i class="align-middle me-1" data-feather="pie-chart"></i> Change Password</a>
+								<div class="dropdown-divider"></div>
+								<a class="dropdown-item" href="/pages-settings"><i class="align-middle me-1" data-feather="settings"></i> Settings &amp;
+									Privacy</a>
+								<a class="dropdown-item" href="#"><i class="align-middle me-1" data-feather="help-circle"></i> Help Center</a>
+								<div class="dropdown-divider"></div>
+								<a class="dropdown-item" href="{% url 'logout' %}">Log out</a>
+							</div>
+
+							<div class="sidebar-user-subtitle">Student</div>
+						</div>
+					</div>
+				</div>
+
+				<ul class="sidebar-nav">
+					<li class="sidebar-header">
+						Welcome
+					</li>
+					<li class="sidebar-item">
+						<a data-bs-target="#dashboards" data-bs-toggle="collapse" class="sidebar-link collapsed">
+							<i class="align-middle" data-feather="sliders"></i> <span class="align-middle">Dashboards</span>
+						</a>
+						<ul id="dashboards" class="sidebar-dropdown list-unstyled collapse " data-bs-parent="#sidebar">
+							<li class="sidebar-item"><a class="sidebar-link" href="{% url 'news' %}">News</a></li>
+						</ul>
+					</li>
+                    <li class="sidebar-item">
+						<a data-bs-target="#result" data-bs-toggle="collapse" class="sidebar-link collapsed">
+							<i class="align-middle" data-feather="list"></i> <span class="align-middle">Result</span>
+						</a>
+						<ul id="result" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
+                            <li class="sidebar-item">
+								<a data-bs-target="">
+                                    <a class="sidebar-link" href="{% url 'caresult' %}">CA Result</a>
+                                </a>
+							</li>
+                            <li class="sidebar-item">
+								<a data-bs-target="">
+                                    <a class="sidebar-link" href="{% url 'finalresult' %}">Exam Result</a>
+                                </a>
+							</li>
+						</ul>
+					</li>
+					<li class="sidebar-item">
+						<a class="sidebar-link" href="{% url 'profile' %}">
+							<i class="align-middle" data-feather="user"></i> <span class="align-middle">Profile</span>
+						</a>
+					</li>
+
+					<li class="sidebar-item">
+						<a class="sidebar-link" href="/calendar">
+							<i class="align-middle" data-feather="calendar"></i> <span class="align-middle">Calendar</span>
+							<span class="sidebar-badge badge bg-primary">Today</span>
+						</a>
+					</li>
+
+					<li class="sidebar-item">
+						<a href="#auth" data-bs-toggle="collapse" class="sidebar-link collapsed">
+							<i class="align-middle" data-feather="users"></i> <span class="align-middle">Auth</span>
+						</a>
+						<ul id="auth" class="sidebar-dropdown list-unstyled collapse " data-bs-parent="#sidebar">
+							<li class="sidebar-item"><a class="sidebar-link" href="{% url 'logout' %}">Logout</a></li>
+							<li class="sidebar-item"><a class="sidebar-link" href="{% url 'change_password' %}">Reset Password <span class="sidebar-badge badge bg-primary"></span></a></li>
+						</ul>
+					</li>
+
+					<li class="sidebar-item">
+						<a class="sidebar-link" href="/notifications">
+							<i class="align-middle" data-feather="bell"></i> <span class="align-middle">Notifications</span>
+							<span class="sidebar-badge badge bg-primary">30+</span>
+						</a>
+					</li>
+
+					<li class="sidebar-item">
+						<a class="sidebar-link" href="#">
+							<i class="align-middle" data-feather="credit-card"></i> <span class="align-middle">Invoice</span>
+						</a>
+					</li>
+				</ul>
+
+				<div class="sidebar-cta">
+					<div class="sidebar-cta-content">
+						<strong class="d-inline-block mb-2">Welcome to Worntech university sims</strong>
+						<div class="mb-3 text-sm">
+							Feel free to ask anything.
+						</div>
+
+						<div class="d-grid">
+							<a href="{% url 'home' %}" class="btn btn-outline-primary" target="_blank">Go to Website</a>
+						</div>
+					</div>
+				</div>
+
+		{% endif %} {% endcomment %}
+
+
+		{% else %}
+		<div class="sidebar-cta">
+			<div class="sidebar-cta-content">
+				<strong class="d-inline-block mb-2">Welcome to Amani International Optical Centre, login to proceed.</strong>
+				<div class="mb-3 text-sm">
+					Feel free all the time. <br><br>
+					This system is for management of the information of Amani International Optical Center<br><br>
+					
+				</div>
+
+				<div class="d-grid">
+					<a href="#" class="btn btn-outline-primary" target="_blank">Welcome</a>
+				</div>
+			</div>
+		</div>
+		{% endif %}
+
+			</div>
+		</nav>
+
+		<div class="main">
+			<nav class="navbar navbar-expand navbar-light navbar-bg">
+				<a class="sidebar-toggle js-sidebar-toggle">
+					<i class="hamburger align-self-center"></i>
+				</a>
+
+				<form class="d-none d-sm-inline-block">
+					<div class="input-group input-group-navbar">
+						<input type="text" class="form-control" placeholder="Search…" aria-label="Search">
+						<button class="btn" type="button">
+							<i class="align-middle" data-feather="search"></i>
+						</button>
+					</div>
+				</form>
+
+				<ul class="navbar-nav d-none d-lg-flex">
+
+					<li class="nav-item px-2">
+						<a class="nav-link" href="#" id="">
+							{% comment %} <h3>Worntech Sims</h3> {% endcomment %}
+						</a>
+					</li>
+
+				</ul>
+				<div class="navbar-collapse collapse">
+					<ul class="navbar-nav navbar-align">
+						<li class="nav-item">
+							<a class="nav-icon js-fullscreen d-none d-lg-block" href="#">
+								<div class="position-relative">
+									<i class="align-middle" data-feather="maximize"></i>
+								</div>
+							</a>
+						</li>
+
+					</ul>
+				</div>
+			</nav>
+
+            {% block content %}
+
+
+            {% endblock %}
+
+			<footer class="footer">
+				<div class="container-fluid">
+					<div class="row text-muted">
+						<div class="col-6 text-start">
+							<p class="mb-0">
+								<a href="#" target="_blank" class="text-muted"><strong>Amani International Optical Centre</strong></a> ©2024
+							</p>
+						</div>
+						<div class="col-6 text-end">
+							<ul class="list-inline">
+								<li class="list-inline-item">
+									<a class="text-muted" href="#">Support</a>
+								</li>
+								<li class="list-inline-item">
+									<a class="text-muted" href="#">Help Center</a>
+								</li>
+								<li class="list-inline-item">
+									<a class="text-muted" href="#">Privacy</a>
+								</li>
+								<li class="list-inline-item">
+									<a class="text-muted" href="#">Terms</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</footer>
+		</div>
+	</div>
+
+	<script src="{% static 'sims/js/app.js' %}"></script>
+	<script src="{% static 'sims/js/main.js' %}"></script>
+
+	<script>
+		document.addEventListener("DOMContentLoaded", function() {
+			var ctx = document.getElementById("chartjs-dashboard-line").getContext("2d");
+			var gradientLight = ctx.createLinearGradient(0, 0, 0, 225);
+			gradientLight.addColorStop(0, "rgba(215, 227, 244, 1)");
+			gradientLight.addColorStop(1, "rgba(215, 227, 244, 0)");
+			var gradientDark = ctx.createLinearGradient(0, 0, 0, 225);
+			gradientDark.addColorStop(0, "rgba(51, 66, 84, 1)");
+			gradientDark.addColorStop(1, "rgba(51, 66, 84, 0)");
+			// Line chart
+			new Chart(document.getElementById("chartjs-dashboard-line"), {
+				type: "line",
+				data: {
+					labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+					datasets: [{
+						label: "Sales ($)",
+						fill: true,
+						backgroundColor: window.theme.id === "light" ? gradientLight : gradientDark,
+						borderColor: window.theme.primary,
+						data: [
+							2115,
+							1562,
+							1584,
+							1892,
+							1587,
+							1923,
+							2566,
+							2448,
+							2805,
+							3438,
+							2917,
+							3327
+						]
+					}]
+				},
+				options: {
+					maintainAspectRatio: false,
+					legend: {
+						display: false
+					},
+					tooltips: {
+						intersect: false
+					},
+					hover: {
+						intersect: true
+					},
+					plugins: {
+						filler: {
+							propagate: false
+						}
+					},
+					scales: {
+						xAxes: [{
+							reverse: true,
+							gridLines: {
+								color: "rgba(0,0,0,0.0)"
+							}
+						}],
+						yAxes: [{
+							ticks: {
+								stepSize: 1000
+							},
+							display: true,
+							borderDash: [3, 3],
+							gridLines: {
+								color: "rgba(0,0,0,0.0)",
+								fontColor: "#fff"
+							}
+						}]
+					}
+				}
+			});
+		});
+	</script>
+	<script>
+		document.addEventListener("DOMContentLoaded", function() {
+			// Bar chart
+			new Chart(document.getElementById("chartjs-dashboard-bar"), {
+				type: "bar",
+				data: {
+					labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+					datasets: [{
+						label: "This year",
+						backgroundColor: window.theme.primary,
+						borderColor: window.theme.primary,
+						hoverBackgroundColor: window.theme.primary,
+						hoverBorderColor: window.theme.primary,
+						data: [54, 67, 41, 55, 62, 45, 55, 73, 60, 76, 48, 79],
+						barPercentage: .75,
+						categoryPercentage: .5
+					}]
+				},
+				options: {
+					maintainAspectRatio: false,
+					legend: {
+						display: false
+					},
+					scales: {
+						yAxes: [{
+							gridLines: {
+								display: false
+							},
+							stacked: false,
+							ticks: {
+								stepSize: 20
+							}
+						}],
+						xAxes: [{
+							stacked: false,
+							gridLines: {
+								color: "transparent"
+							}
+						}]
+					}
+				}
+			});
+		});
+	</script>
+	<script>
+		document.addEventListener("DOMContentLoaded", function() {
+			var markers = [{
+					coords: [37.77, -122.41],
+					name: "San Francisco: 375"
+				},
+				{
+					coords: [40.71, -74.00],
+					name: "New York: 350"
+				},
+				{
+					coords: [39.09, -94.57],
+					name: "Kansas City: 250"
+				},
+				{
+					coords: [36.16, -115.13],
+					name: "Las Vegas: 275"
+				},
+				{
+					coords: [32.77, -96.79],
+					name: "Dallas: 225"
+				}
+			];
+			var map = new jsVectorMap({
+				map: "us_aea_en",
+				selector: "#usa_map",
+				zoomButtons: true,
+				markers: markers,
+				markerStyle: {
+					initial: {
+						r: 9,
+						stroke: window.theme.white,
+						strokeWidth: 7,
+						stokeOpacity: .4,
+						fill: window.theme.primary
+					},
+					hover: {
+						fill: window.theme.primary,
+						stroke: window.theme.primary
+					}
+				},
+				regionStyle: {
+					initial: {
+						fill: window.theme["gray-200"]
+					}
+				},
+				zoomOnScroll: false
+			});
+			window.addEventListener("resize", () => {
+				map.updateSize();
+			});
+			setTimeout(function() {
+				map.updateSize();
+			}, 250);
+		});
+	</script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function(event) { 
+    setTimeout(function(){
+      if(localStorage.getItem('popState') !== 'shown'){
+        window.notyf.open({
+          type: "success",
+          message: "World in innovation with technology university system.<u><a class=\"text-white\" href=\"https://www.worntech.com\" target=\"_blank\">Contact Developer</a></u> 🚀",
+          duration: 10000,
+          ripple: true,
+          dismissible: false,
+          position: {
+            x: "left",
+            y: "bottom"
+          }
+        });
+
+        localStorage.setItem('popState','shown');
+      }
+    }, 15000);
+  });
+</script>
+
+</body></html>

@@ -1,0 +1,253 @@
+{% extends 'sims/base.html' %}
+{% load static %}
+{% block content %}
+
+
+<!DOCTYPE html><html lang="en"><head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="description" content="Responsive Admin &amp; Dashboard Template based on Bootstrap 5">
+	<meta name="author" content="AdminKit">
+	<meta name="keywords" content="adminkit, bootstrap, bootstrap 5, admin, dashboard, template, responsive, css, sass, html, theme, front-end, ui kit, web">
+
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link rel="shortcut icon" href="images/icon-48x48.png">
+
+	<link rel="canonical" href="https://demo.adminkit.io/pages-clients.html">
+
+	<title></title>
+
+	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&amp;display=swap" rel="stylesheet">
+
+	<!-- Choose your prefered color scheme -->
+	<!-- <link href="css/light.css" rel="stylesheet"> -->
+	<!-- <link href="css/dark.css" rel="stylesheet"> -->
+
+	<!-- BEGIN SETTINGS -->
+	<!-- Remove this after purchasing -->
+	<link href="{% static 'sims/css/light.css' %}" rel="stylesheet">
+	<style>
+		body {
+			opacity: 0;
+		}
+	</style>
+	<!-- END SETTINGS -->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-120946860-10"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-120946860-10', { 'anonymize_ip': true });
+</script></head>
+<!--
+  HOW TO USE: 
+  data-theme: default (default), dark, light, colored
+  data-layout: fluid (default), boxed
+  data-sidebar-position: left (default), right
+  data-sidebar-layout: default (default), compact
+-->
+
+<body data-theme="default" data-layout="fluid" data-sidebar-position="left" data-sidebar-layout="default">
+	<div class="wrapper">
+
+		<div class="main">
+
+			<main class="content">
+				<div class="container-fluid p-0">
+
+					<div class="mb-3">
+						<h1 class="h3 d-inline align-middle">Worntech University</h1><a class="badge bg-primary ms-2" href="#" target="_blank">News and Annoucement</a>
+					</div>
+
+					<div class="row">
+                        <div class="alert alert-warning alert-dismissible" role="alert">
+                            <div class="alert-message">
+                                <h4 class="alert-heading">THE ACTIVE ACADEMIC YEAR 2023/2024, YOU HAVE BEEN REGISTERED IN BACHELOR OF COMPUTER ENGINEER FOUR YEARS, SECOND YEAR.</h4>
+                                <p>
+                                    
+                                </p>
+                                <pre class="h6 text-danger mb-0"><script src="{% static 'web/js/datatables.js' %}"></script></pre>
+                            </div>
+                        </div>
+						<div class="col-xl-8">
+							<div class="card">
+								<div class="card-header pb-0">
+
+									{% comment %} <div class="card-actions float-end">
+										<div class="dropdown position-relative">
+											<a href="#" data-bs-toggle="dropdown" data-bs-display="static">
+												<i class="align-middle" data-feather="more-horizontal"></i>
+											</a>
+
+											<div class="dropdown-menu dropdown-menu-end">
+												<a class="dropdown-item" href="#">Action</a>
+												<a class="dropdown-item" href="#">Another action</a>
+												<a class="dropdown-item" href="#">Something else here</a>
+											</div>
+										</div>
+									</div> {% endcomment %}
+
+									<h5 class="card-title mb-0">University Events</h5>
+								</div>
+								<div class="card-body">
+									<table class="table table-responsive table-striped" style="width:100%">
+										{% if events %}
+										<thead>
+											<tr>
+												<th>Event Name</th>
+												<th>Event Place</th>
+												<th class="d-none d-md-table-cell">Event Start</th>
+												<th class="d-none d-md-table-cell">Event Dedline</th>
+												<th>View</th>
+                                                <th>Edit</th>
+                                                <th>Delete</th>
+											</tr>
+										</thead>
+										<tbody>
+                                            {% for i in events %}
+											<tr>
+												<td>{{i.Event_Name}}</td>
+												<td>{{i.Event_Place}}</td>
+												<td class="d-none d-md-table-cell">{{i.Event_Start}}</td>
+												<td class="d-none d-md-table-cell">{{i.Event_End}}</td>
+												<td><span class="badge bg-success">View</span></td>
+                                                <td><span class="badge bg-warning">Edit</span></td>
+                                                <td><span class="badge bg-danger">Delete</span></td>
+											</tr>
+                                            {% endfor %}
+                                            {% else %}
+                                            <p>No event</p>
+										</tbody>
+										{% endif %}
+									</table>
+								</div>
+							</div>
+						</div>
+
+						<div class="col-xl-4">
+							<div class="card">
+
+								{% comment %} <div class="card-header">
+									<div class="card-actions float-end">
+										<div class="dropdown position-relative">
+											<a href="#" data-bs-toggle="dropdown" data-bs-display="static">
+												<i class="align-middle" data-feather="more-horizontal"></i>
+											</a>
+
+											<div class="dropdown-menu dropdown-menu-end">
+												<a class="dropdown-item" href="#">Action</a>
+												<a class="dropdown-item" href="#">Another action</a>
+												<a class="dropdown-item" href="#">Something else here</a>
+											</div>
+										</div>
+									</div>
+									<h5 class="card-title mb-0">Angelica Ramos</h5>
+								</div> {% endcomment %}
+
+								<div class="card-body">
+									<div class="row g-0">
+
+										{% comment %} <div class="col-sm-3 col-xl-12 col-xxl-3 text-center">
+											<img src="images/avatar-3.jpg" width="64" height="64" class="rounded-circle mt-2" alt="Angelica Ramos">
+										</div> {% endcomment %}
+
+										<div class="col-sm-9 col-xl-12 col-xxl-9">
+											<strong>University Information</strong>
+											<p>Welcome to the worntech university and enjoy the service, now your in worntech management system.</p>
+										</div>
+									</div>
+
+									<table class="table table-sm mt-2 mb-4">
+										<tbody>
+											<tr>
+												<th>University</th>
+												<td>Worntech University</td>
+											</tr>
+											<tr>
+												<th>Company</th>
+												<td>Worntech</td>
+											</tr>
+											<tr>
+												<th>Email</th>
+												<td>worntech@gmail.com</td>
+											</tr>
+											<tr>
+												<th>Phone</th>
+												<td>+255 744 200 608</td>
+											</tr>
+											<tr>
+												<th>Status</th>
+												<td><span class="badge bg-success">Active</span></td>
+											</tr>
+										</tbody>
+									</table>
+
+									<strong>News</strong>
+
+									<ul class="timeline mt-2 mb-0">
+										<li class="timeline-item">
+											<strong>University innovation</strong>
+											<span class="float-end text-muted text-sm">30m ago</span>
+											<p>Nam pretium turpis et arcu. Duis arcu tortor, suscipit...</p>
+										</li>
+										<li class="timeline-item">
+											<strong>University innovation</strong>
+											<span class="float-end text-muted text-sm">2h ago</span>
+											<p>Sed aliquam ultrices mauris. Integer ante arcu...</p>
+										</li>
+										<li class="timeline-item">
+											<strong>University innovation</strong>
+											<span class="float-end text-muted text-sm">3h ago</span>
+											<p>Nam pretium turpis et arcu. Duis arcu tortor, suscipit...</p>
+										</li>
+										<li class="timeline-item">
+											<strong>University innovation</strong>
+											<span class="float-end text-muted text-sm">3h ago</span>
+											<p>Curabitur ligula sapien, tincidunt non, euismod vitae...</p>
+										</li>
+										<li class="timeline-item">
+											<strong>University innovation</strong>
+											<span class="float-end text-muted text-sm">2d ago</span>
+											<p>Sed aliquam ultrices mauris. Integer ante arcu...</p>
+										</li>
+									</ul>
+
+								</div>
+							</div>
+						</div>
+					</div>
+
+				</div>
+			</main>
+		</div>
+	</div>
+
+	<script src="js/app.js"></script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function(event) { 
+    setTimeout(function(){
+      if(localStorage.getItem('popState') !== 'shown'){
+        window.notyf.open({
+          type: "success",
+          message: "Get access to all 500+ components and 45+ pages with AdminKit PRO. <u><a class=\"text-white\" href=\"https://adminkit.io/pricing\" target=\"_blank\">More info</a></u> 🚀",
+          duration: 10000,
+          ripple: true,
+          dismissible: false,
+          position: {
+            x: "left",
+            y: "bottom"
+          }
+        });
+
+        localStorage.setItem('popState','shown');
+      }
+    }, 15000);
+  });
+</script>
+
+</body></html>
+
+{% endblock %}

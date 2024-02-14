@@ -1,0 +1,589 @@
+{% extends 'web/base1.html' %}
+{% load static %}
+{% block content %}
+
+<!doctype html>
+<html lang="en">
+
+<head>
+
+    <!--====== Required meta tags ======-->
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!--====== Title ======-->
+    <title>World in inovation with technology(Worntech) university.</title>
+
+    <!--====== Favicon Icon ======-->
+    <link rel="shortcut icon" href="{% static 'web/images/favicon.png' %}" type="image/png">
+
+    <!--====== Slick css ======-->
+    <link rel="stylesheet" href="{% static 'web/css/slick.css' %}">
+
+    <!--====== Animate css ======-->
+    <link rel="stylesheet" href="{% static 'web/css/animate.css' %}">
+
+    <!--====== Nice Select css ======-->
+    <link rel="stylesheet" href="{% static 'web/css/nice-select.css' %}">
+
+    <!--====== Nice Number css ======-->
+    <link rel="stylesheet" href="{% static 'web/css/jquery.nice-number.min.css' %}">
+
+    <!--====== Magnific Popup css ======-->
+    <link rel="stylesheet" href="{% static 'web/css/magnific-popup.css' %}">
+
+    <!--====== Bootstrap css ======-->
+    <link rel="stylesheet" href="{% static 'web/css/bootstrap.min.css' %}">
+
+    <!--====== Fontawesome css ======-->
+    <link rel="stylesheet" href="{% static 'web/css/font-awesome.min.css' %}">
+
+    <!--====== Default css ======-->
+    <link rel="stylesheet" href="{% static 'web/css/default.css' %}">
+
+    <!--====== Style css ======-->
+    <link rel="stylesheet" href="{% static 'web/css/style.css' %}">
+
+    <!--====== Responsive css ======-->
+    <link rel="stylesheet" href="{% static 'web/css/responsive.css' %}">
+
+
+</head>
+
+<body>
+
+    <!--====== PRELOADER PART START ======-->
+
+
+    <!--====== PRELOADER PART START ======-->
+
+    <!--====== HEADER PART START ======-->
+
+    
+    <!--====== HEADER PART ENDS ======-->
+
+    <!--====== SEARCH BOX PART START ======-->
+
+    <div class="search-box">
+        <div class="serach-form">
+            <div class="closebtn">
+                <span></span>
+                <span></span>
+            </div>
+            <form action="#">
+                <input type="text" placeholder="Search by keyword">
+                <button><i class="fa fa-search"></i></button>
+            </form>
+        </div>
+        <!-- serach form -->
+    </div>
+
+    <!--====== SEARCH BOX PART ENDS ======-->
+
+    <!--====== PAGE BANNER PART START ======-->
+
+    <section id="page-banner" class="pt-105 pb-130 bg_cover" data-overlay="8" style="background: url('{% static "web/images/page-banner-5.jpg" %}');">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="page-banner-cont">
+                        <h2>Shop</h2>
+                        <nav aria-label="breadcrumb">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item"><a href="#">Home</a></li>
+                                <li class="breadcrumb-item active" aria-current="page">Shop</li>
+                            </ol>
+                        </nav>
+                    </div>
+                    <!-- page banner cont -->
+                </div>
+            </div>
+            <!-- row -->
+        </div>
+        <!-- container -->
+    </section>
+
+    <!--====== PAGE BANNER PART ENDS ======-->
+
+    <!--====== SHOP PART START ======-->
+
+    <section id="shop-page" class="pt-120 pb-120 gray-bg">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="shop-top-search">
+                        <div class="shop-bar">
+                            <ul class="nav" id="myTab" role="tablist">
+                                <li class="nav-item">
+                                    <a class="active" id="shop-grid-tab" data-toggle="tab" href="#shop-grid" role="tab" aria-controls="shop-grid" aria-selected="true"><i class="fa fa-th-large"></i></a>
+                                </li>
+                                <li class="nav-item">
+                                    <a id="shop-list-tab" data-toggle="tab" href="#shop-list" role="tab" aria-controls="shop-list" aria-selected="false"><i class="fa fa-th-list"></i></a>
+                                </li>
+                                <li class="nav-item">Showning 4 0f 24 Results</li>
+                            </ul>
+                            <!-- nav -->
+                        </div>
+                        <!-- shop bar -->
+                        <div class="shop-select">
+                            <select>
+                                <option value="1">Sort by</option>
+                                <option value="1">Sort by 01</option>
+                                <option value="2">Sort by 02</option>
+                                <option value="3">Sort by 03</option>
+                                <option value="4">Sort by 04</option>
+                                <option value="5">Sort by 05</option>
+                            </select>
+                        </div>
+                        <!-- shop select -->
+                    </div>
+                    <!-- shop top search -->
+                </div>
+            </div>
+            <!-- row -->
+            <div class="tab-content" id="myTabContent">
+                <div class="tab-pane fade show active" id="shop-grid" role="tabpanel" aria-labelledby="shop-grid-tab">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-3 col-md-6 col-sm-8">
+                            <div class="singel-publication mt-30">
+                                <div class="image">
+                                    <img src="{% static 'web/images/publication/p-1.jpg' %}" alt="Publication">
+                                    <div class="add-cart">
+                                        <ul>
+                                            <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
+                                            <li><a href="#"><i class="fa fa-heart-o"></i></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="cont">
+                                    <div class="name">
+                                        <a href="shop-singel.html">
+                                            <h6>Magazine</h6>
+                                        </a>
+                                        <span>$50.00</span>
+                                    </div>
+                                    <div class="button text-right">
+                                        <a href="#" class="main-btn">Buy Now</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- singel publication -->
+                        </div>
+                        <div class="col-lg-3 col-md-6 col-sm-8">
+                            <div class="singel-publication mt-30">
+                                <div class="image">
+                                    <img src="{% static 'web/images/publication/p-2.jpg' %}" alt="Publication">
+                                    <div class="add-cart">
+                                        <ul>
+                                            <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
+                                            <li><a href="#"><i class="fa fa-heart-o"></i></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="cont">
+                                    <div class="name">
+                                        <a href="shop-singel.html">
+                                            <h6>Notebook </h6>
+                                        </a>
+                                        <span>$50.00</span>
+                                    </div>
+                                    <div class="button text-right">
+                                        <a href="#" class="main-btn">Buy Now</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- singel publication -->
+                        </div>
+                        <div class="col-lg-3 col-md-6 col-sm-8">
+                            <div class="singel-publication mt-30">
+                                <div class="image">
+                                    <img src="{% static 'web/images/publication/p-3.jpg' %}" alt="Publication">
+                                    <div class="add-cart">
+                                        <ul>
+                                            <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
+                                            <li><a href="#"><i class="fa fa-heart-o"></i></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="cont">
+                                    <div class="name">
+                                        <a href="shop-singel.html">
+                                            <h6>Staionary set </h6>
+                                        </a>
+                                        <span>$50.00</span>
+                                    </div>
+                                    <div class="button text-right">
+                                        <a href="#" class="main-btn">Buy Now</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- singel publication -->
+                        </div>
+                        <div class="col-lg-3 col-md-6 col-sm-8">
+                            <div class="singel-publication mt-30">
+                                <div class="image">
+                                    <img src="{% static 'web/images/publication/p-4.jpg' %}" alt="Publication">
+                                    <div class="add-cart">
+                                        <ul>
+                                            <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
+                                            <li><a href="#"><i class="fa fa-heart-o"></i></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="cont">
+                                    <div class="name">
+                                        <a href="shop-singel.html">
+                                            <h6>Set for life </h6>
+                                        </a>
+                                        <span>$50.00</span>
+                                    </div>
+                                    <div class="button text-right">
+                                        <a href="#" class="main-btn">Buy Now</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- singel publication -->
+                        </div>
+                        <div class="col-lg-3 col-md-6 col-sm-8">
+                            <div class="singel-publication mt-30">
+                                <div class="image">
+                                    <img src="{% static 'web/images/publication/p-5.jpg' %}" alt="Publication">
+                                    <div class="add-cart">
+                                        <ul>
+                                            <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
+                                            <li><a href="#"><i class="fa fa-heart-o"></i></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="cont">
+                                    <div class="name">
+                                        <a href="shop-singel.html">
+                                            <h6>Set for life </h6>
+                                        </a>
+                                        <span>$50.00</span>
+                                    </div>
+                                    <div class="button text-right">
+                                        <a href="#" class="main-btn">Buy Now</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- singel publication -->
+                        </div>
+                        <div class="col-lg-3 col-md-6 col-sm-8">
+                            <div class="singel-publication mt-30">
+                                <div class="image">
+                                    <img src="{% static 'web/images/publication/p-6.jpg' %}" alt="Publication">
+                                    <div class="add-cart">
+                                        <ul>
+                                            <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
+                                            <li><a href="#"><i class="fa fa-heart-o"></i></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="cont">
+                                    <div class="name">
+                                        <a href="shop-singel.html">
+                                            <h6>Set for life </h6>
+                                        </a>
+                                        <span>$50.00</span>
+                                    </div>
+                                    <div class="button text-right">
+                                        <a href="#" class="main-btn">Buy Now</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- singel publication -->
+                        </div>
+                        <div class="col-lg-3 col-md-6 col-sm-8">
+                            <div class="singel-publication mt-30">
+                                <div class="image">
+                                    <img src="{% static 'web/images/publication/p-7.jpg' %}" alt="Publication">
+                                    <div class="add-cart">
+                                        <ul>
+                                            <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
+                                            <li><a href="#"><i class="fa fa-heart-o"></i></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="cont">
+                                    <div class="name">
+                                        <a href="shop-singel.html">
+                                            <h6>Magazine </h6>
+                                        </a>
+                                        <span>$50.00</span>
+                                    </div>
+                                    <div class="button text-right">
+                                        <a href="#" class="main-btn">Buy Now</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- singel publication -->
+                        </div>
+                        <div class="col-lg-3 col-md-6 col-sm-8">
+                            <div class="singel-publication mt-30">
+                                <div class="image">
+                                    <img src="{% static 'web/images/publication/p-8.jpg' %}" alt="Publication">
+                                    <div class="add-cart">
+                                        <ul>
+                                            <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
+                                            <li><a href="#"><i class="fa fa-heart-o"></i></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="cont">
+                                    <div class="name">
+                                        <a href="shop-singel.html">
+                                            <h6>Set for life </h6>
+                                        </a>
+                                        <span>$50.00</span>
+                                    </div>
+                                    <div class="button text-right">
+                                        <a href="#" class="main-btn">Buy Now</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- singel publication -->
+                        </div>
+                    </div>
+                    <!-- row -->
+                </div>
+                <div class="tab-pane fade" id="shop-list" role="tabpanel" aria-labelledby="shop-list-tab">
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="singel-publication mt-30">
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <div class="image">
+                                            <img src="{% static 'web/images/publication/p-1.jpg' %}" alt="Publication">
+                                            <div class="add-cart">
+                                                <ul>
+                                                    <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
+                                                    <li><a href="#"><i class="fa fa-heart-o"></i></a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="cont">
+                                            <div class="name">
+                                                <a href="shop-singel.html">
+                                                    <h6>Set for life </h6>
+                                                </a>
+                                                <span>$50.00</span>
+                                            </div>
+                                            <div class="description pt-10">
+                                                <p>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley.</p>
+                                            </div>
+                                            <div class="button">
+                                                <a href="#" class="main-btn">Buy Now</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- row -->
+                            </div>
+                            <!-- singel publication -->
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="singel-publication mt-30">
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <div class="image">
+                                            <img src="{% static 'web/images/publication/p-2.jpg' %}" alt="Publication">
+                                            <div class="add-cart">
+                                                <ul>
+                                                    <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
+                                                    <li><a href="#"><i class="fa fa-heart-o"></i></a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="cont">
+                                            <div class="name">
+                                                <a href="shop-singel.html">
+                                                    <h6>Set for life </h6>
+                                                </a>
+                                                <span>$50.00</span>
+                                            </div>
+                                            <div class="description pt-10">
+                                                <p>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley.</p>
+                                            </div>
+                                            <div class="button">
+                                                <a href="#" class="main-btn">Buy Now</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- row -->
+                            </div>
+                            <!-- singel publication -->
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="singel-publication mt-30">
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <div class="image">
+                                            <img src="{% static 'web/images/publication/p-3.jpg' %}" alt="Publication">
+                                            <div class="add-cart">
+                                                <ul>
+                                                    <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
+                                                    <li><a href="#"><i class="fa fa-heart-o"></i></a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="cont">
+                                            <div class="name">
+                                                <a href="shop-singel.html">
+                                                    <h6>Set for life </h6>
+                                                </a>
+                                                <span>$50.00</span>
+                                            </div>
+                                            <div class="description pt-10">
+                                                <p>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley.</p>
+                                            </div>
+                                            <div class="button">
+                                                <a href="#" class="main-btn">Buy Now</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- row -->
+                            </div>
+                            <!-- singel publication -->
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="singel-publication mt-30">
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <div class="image">
+                                            <img src="{% static 'web/images/publication/p-4.jpg' %}" alt="Publication">
+                                            <div class="add-cart">
+                                                <ul>
+                                                    <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
+                                                    <li><a href="#"><i class="fa fa-heart-o"></i></a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="cont">
+                                            <div class="name">
+                                                <a href="shop-singel.html">
+                                                    <h6>Set for life </h6>
+                                                </a>
+                                                <span>$50.00</span>
+                                            </div>
+                                            <div class="description pt-10">
+                                                <p>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley.</p>
+                                            </div>
+                                            <div class="button">
+                                                <a href="#" class="main-btn">Buy Now</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- row -->
+                            </div>
+                            <!-- singel publication -->
+                        </div>
+                    </div>
+                    <!-- row -->
+                </div>
+            </div>
+            <!-- tab content -->
+            <div class="row">
+                <div class="col-lg-12">
+                    <nav class="courses-pagination mt-50">
+                        <ul class="pagination justify-content-center">
+                            <li class="page-item">
+                                <a href="#" aria-label="Previous">
+                                    <i class="fa fa-angle-left"></i>
+                                </a>
+                            </li>
+                            <li class="page-item"><a class="active" href="#">1</a></li>
+                            <li class="page-item"><a href="#">2</a></li>
+                            <li class="page-item"><a href="#">3</a></li>
+                            <li class="page-item">
+                                <a href="#" aria-label="Next">
+                                    <i class="fa fa-angle-right"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                    <!-- courses pagination -->
+                </div>
+            </div>
+            <!-- row -->
+        </div>
+        <!-- container -->
+    </section>
+
+    <!--====== COURSES PART ENDS ======-->
+
+    <!--====== FOOTER PART START ======-->
+
+
+    <!--====== FOOTER PART ENDS ======-->
+
+    <!--====== BACK TO TP PART START ======-->
+
+    <a href="#" class="back-to-top"><i class="fa fa-angle-up"></i></a>
+
+    <!--====== BACK TO TP PART ENDS ======-->
+
+
+
+
+
+
+
+
+    <!--====== jquery js ======-->
+    <script src="js/vendor/modernizr-3.6.0.min.js"></script>
+    <script src="js/vendor/jquery-1.12.4.min.js"></script>
+
+    <!--====== Bootstrap js ======-->
+    <script src="js/bootstrap.min.js"></script>
+
+    <!--====== Slick js ======-->
+    <script src="js/slick.min.js"></script>
+
+    <!--====== Magnific Popup js ======-->
+    <script src="js/jquery.magnific-popup.min.js"></script>
+
+    <!--====== Counter Up js ======-->
+    <script src="js/waypoints.min.js"></script>
+    <script src="js/jquery.counterup.min.js"></script>
+
+    <!--====== Nice Select js ======-->
+    <script src="js/jquery.nice-select.min.js"></script>
+
+    <!--====== Nice Number js ======-->
+    <script src="js/jquery.nice-number.min.js"></script>
+
+    <!--====== Count Down js ======-->
+    <script src="js/jquery.countdown.min.js"></script>
+
+    <!--====== Validator js ======-->
+    <script src="js/validator.min.js"></script>
+
+    <!--====== Ajax Contact js ======-->
+    <script src="js/ajax-contact.js"></script>
+
+    <!--====== Main js ======-->
+    <script src="js/main.js"></script>
+
+    <!--====== Map js ======-->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDC3Ip9iVC0nIxC6V14CKLQ1HZNF_65qEQ"></script>
+    <script src="js/map-script.js"></script>
+
+</body>
+
+</html>
+
+{% endblock %}
